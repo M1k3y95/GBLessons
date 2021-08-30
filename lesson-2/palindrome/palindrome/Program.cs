@@ -6,6 +6,35 @@ namespace palindrome
     {
         static void Main(string[] args)
         {
+            //Реализация с числовыми манипуляциями
+
+            Console.WriteLine("Введите число для проверки");
+
+            int numberAgain = int.Parse(Console.ReadLine());
+
+            int andAgain = numberAgain;
+
+            int result = 0;
+
+            while (andAgain > 0)
+            {
+                result *= 10;
+                result += andAgain % 10;
+                andAgain /= 10;
+            }
+
+            if (numberAgain == result)
+            {
+                Console.WriteLine($"{numberAgain} | {result}");
+                Console.WriteLine("Число является палиндромом!");
+            }
+            else
+            {
+                Console.WriteLine($"{numberAgain} | {result}");
+                Console.WriteLine("Число не является палиндромом!");
+            }
+
+
             // Реализация с уже заданным числом
 
             int[] numberArray = { 121, 199, 212, 405, 404 };
